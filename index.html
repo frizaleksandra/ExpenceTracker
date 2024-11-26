@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Expence tracker</h1>
+        <div class="balance-box">
+            <div class="balance-box-card">
+                <h4 class="total">total balance</h4>
+                <span class="suma" id="total-balance">$5000</span>
+            </div>
+
+            <div class="income-expence">
+                <div class="balance-box-card">
+                    <h4 class="total">income</h4>
+                    <span class="suma" id="income">0</span>
+                </div>
+
+                <div class="balance-box-card">
+                    <h4 class="total">expence</h4>
+                    <span class="suma" id="expence">0</span>
+                </div>
+            </div>      
+        </div>
+
+
+        <div class="transactions">
+            <h2 class="transactions-title">Transactions</h2>
+
+            <div class="transactions-block">
+                <div class="transactions-block">
+                    <h5 class="transactions-block-title">Grocery</h5>
+                    <span class="date">5/1/2024</span>
+                    <p class="transactions-block-suma" style="color: red">-$500</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="add_transaction">
+            <h2 class="add-title">Add Transaction</h2>
+
+            <div class="transaction-buttons">
+                <button id="income-btn" class="income-btn">income</button>
+                <button id="expence-btn" class="expence-btn">expence</button>
+
+            </div>
+            
+            <div class="add_transaction-box">
+                <div class="add-item">
+                    <label for="nametov">name</label>
+                    <input type="text" id="nametov">
+                </div>
+
+                <div class="amount-date">
+                    <div class="add-item">
+                        <label for="amount">amount</label>
+                        <input type="text" id="amount">
+                    </div>
+
+                    <div class="add-item">
+                        <label for="date">date</label>
+                        <input type="date" id="date">
+                    </div> 
+                </div>
+
+                <button class="btn">submit</button>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+    <script src="main.js"></script>
+</body>
+</html>

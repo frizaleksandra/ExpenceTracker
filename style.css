@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+    color: rgb(39, 40, 41);
+}
+
+.container{
+    max-width: 400px;
+    background-color: rgba(226, 229, 229, 0.53);
+    margin: 80px auto;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.title{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.balance-box{
+    background-color: rgb(174, 245, 171);
+    width: 350px;
+    border-radius: 20px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    color: aliceblue;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.income-expence{
+    display: flex;
+    justify-content: space-between;
+}
+
+.transactions{
+    margin-bottom: 20px;
+}
+
+.transactions-block-suma{
+    float: right;
+    
+}
+
+.close{
+    margin-left: 10px;
+    color: black;
+}
+
+.transactions-title{
+    margin-bottom: 15px;
+}
+
+.transactions-block{
+    margin-bottom: 10px;
+}
+
+.transactions-block-title{
+    font-size: 15px;
+}
+
+.date{
+    font-size: 10px;
+}
+
+.add_transaction-box{
+    text-align: center;
+}
+
+.transaction-buttons{
+    background-color: #fff;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+}
+
+.income-btn,
+.expence-btn{
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    margin: 5px;
+    font-size: 17px;
+    font-weight: 500;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.income-btn:hover,
+.expence-btn:hover{
+    background-color: rgb(179, 249, 194);
+}
+
+.amount-date{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+#nametov{
+    width: inherit;
+    margin-bottom: 15px;
+}
+
+.add-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.add-title{
+    margin-bottom: 15px;
+}
+
+.add-item input{
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(167, 167, 167);
+}
+
+.btn{
+    padding: 10px 100px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(137, 236, 107);
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+}
