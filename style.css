@@ -21,7 +21,7 @@
 
 .balance-box{
     background-color: rgb(174, 245, 171);
-    width: 350px;
+    width: 100%;
     border-radius: 20px;
     margin: 0 auto;
     text-align: center;
@@ -128,7 +128,7 @@
 
 .btn{
     padding: 10px 100px;
-    border-radius: 20px;
+    border-radius: 10px;
     border: none;
     background-color: rgb(137, 236, 107);
     text-transform: uppercase;
