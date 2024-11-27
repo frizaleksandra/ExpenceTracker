@@ -29,7 +29,6 @@ date.setAttribute('max', new Date().toISOString().split('T')[0]);
 btn.addEventListener('click', () => {
     if (!nametov.value || !amount.value || !date.value) {
         alert('Please fill in all fields!');
-        return;
     }
 
     if(nametov.value.length <= 2){
@@ -45,7 +44,6 @@ btn.addEventListener('click', () => {
 
     if(selectedDate > currentDate){
         alert('you can\'t choose future date');
-        return;
     }
 
     const currentBalance = parseFloat(totalBalance.textContent.replace('$', ''));
@@ -90,6 +88,9 @@ btn.addEventListener('click', () => {
         totalBalance.textContent = `$${newBalance}`;
     }
    
+    if(transactionType === ''){
+        alert('choose type of transaction!');
+    }
     
 
     nametov.value = '';
