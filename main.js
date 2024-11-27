@@ -31,6 +31,14 @@ btn.addEventListener('click', () => {
         return;
     }
 
+    if(nametov.value.length <= 2){
+        alert('string must be more than 2 symbols');
+    }
+
+    if(amount.value != /^\d+$/){
+        alert('you need to write only numbers');
+    }
+
     const currentBalance = parseFloat(totalBalance.textContent.replace('$', ''));
     const expenceAmount = parseFloat(amount.value);
     const incomeAmount = parseFloat(amount.value);
