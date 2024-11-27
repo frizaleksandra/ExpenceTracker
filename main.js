@@ -26,6 +26,10 @@ expenceBtn.addEventListener('click', () => {
 
 
 btn.addEventListener('click', () => {
+    if (!nametov.value || !amount.value || !date.value) {
+        alert('Please fill in all fields!');
+        return;
+    }
 
     const currentBalance = parseFloat(totalBalance.textContent.replace('$', ''));
     const expenceAmount = parseFloat(amount.value);
