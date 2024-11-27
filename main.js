@@ -24,6 +24,7 @@ expenceBtn.addEventListener('click', () => {
     incomeBtn.style.backgroundColor = '';
 });
 
+date.setAttribute('max', new Date().toISOString().split('T')[0]);
 
 btn.addEventListener('click', () => {
     if (!nametov.value || !amount.value || !date.value) {
@@ -37,6 +38,14 @@ btn.addEventListener('click', () => {
 
     if(amount.value != /^\d+$/){
         alert('you need to write only numbers');
+    }
+
+    const selectedDate = new Date(date.value);
+    const currentDate = new Date();
+
+    if(selectedDate > currentDate){
+        alert('you can\'t choose future date');
+        return;
     }
 
     const currentBalance = parseFloat(totalBalance.textContent.replace('$', ''));
