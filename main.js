@@ -55,6 +55,11 @@ btn.addEventListener('click', () => {
     const currentBalance = parseFloat(totalBalance.textContent.replace('$', ''));
     const transactionAmount = parseFloat(amount.value);
 
+    if(transactionType === 'expence' && (currentBalance === 0 || transactionAmount > currentBalance)){
+        alert('you have not money on balance for this transaction!');
+        return;
+    }
+
     if(!isNaN(transactionAmount) && transactionAmount > 0){
         if(transactionType === 'expence'){
             transactions.innerHTML += 
