@@ -31,10 +31,12 @@ date.setAttribute('max', new Date().toISOString().split('T')[0]);
 btn.addEventListener('click', () => {
     if (!nametov.value || !amount.value || !date.value) {
         alert('Please fill in all fields!');
+        return;
     }
 
     if(nametov.value.length <= 2){
         alert('string must be more than 2 symbols');
+        return;
     }
 
     if (!/^\d+(\.\d+)?$/.test(amount.value)) {
@@ -47,6 +49,7 @@ btn.addEventListener('click', () => {
 
     if(selectedDate > currentDate){
         alert('you can\'t choose future date');
+        return;
     }
 
     const currentBalance = parseFloat(totalBalance.textContent.replace('$', ''));
@@ -79,6 +82,7 @@ btn.addEventListener('click', () => {
    
     if(transactionType === ''){
         alert('choose type of transaction!');
+        return;
     }
 
     nametov.value = '';
