@@ -11,6 +11,8 @@ const expenceBtn = document.getElementById('expence-btn');
 const close = document.querySelector('close');
 
 let transactionType = '';
+let totalIncome = 0;
+let totalExpense = 0;
 
 incomeBtn.addEventListener('click', () => {
     transactionType = 'income';
@@ -35,8 +37,9 @@ btn.addEventListener('click', () => {
         alert('string must be more than 2 symbols');
     }
 
-    if(amount.value != /^\d+$/){
-        alert('you need to write only numbers');
+    if (!/^\d+(\.\d+)?$/.test(amount.value)) {
+        alert('You need to write only numbers');
+        return;
     }
 
     const selectedDate = new Date(date.value);
@@ -47,57 +50,38 @@ btn.addEventListener('click', () => {
     }
 
     const currentBalance = parseFloat(totalBalance.textContent.replace('$', ''));
-    const expenceAmount = parseFloat(amount.value);
-    const incomeAmount = parseFloat(amount.value);
-    const currentExpence = parseFloat(expence.textContent.replace('$', ''));
-    const currentIncome = parseFloat(income.textContent.replace('$', ''));
+    const transactionAmount = parseFloat(amount.value);
 
-
-    if(!isNaN(expenceAmount) && expenceAmount > 0){
-
+    if(!isNaN(transactionAmount) && transactionAmount > 0){
         if(transactionType === 'expence'){
             transactions.innerHTML += 
             `<div class="transactions-block">
                 <h5 class="transactions-block-title">${nametov.value}</h5>
                 <span class="date">${date.value}</span>
-                <p class="transactions-block-suma" style="color: red">-$${amount.value}</p>
-            </div>`
-            ;
-            const newExpence = currentExpence + expenceAmount;
-            expence.textContent = `$${newExpence}`;
-
-
+                <p class="transactions-block-suma" style="color: red">-$${transactionAmount}</p>
+            </div>`;
+            totalExpense += transactionAmount;
+            expence.textContent = `$${totalExpense.toFixed(2)}`;
         }else if(transactionType === 'income'){
             transactions.innerHTML += 
            `<div class="transactions-block">
                 <h5 class="transactions-block-title">${nametov.value}</h5>
                 <span class="date">${date.value}</span>
-                <p class="transactions-block-suma" style="color: green">+$${amount.value}>\u00d7</span></p>
-                
-            </div>`
-            ; 
-            
-            const newIncome = currentIncome + incomeAmount;
-            income.textContent = `$${newIncome}`;
+                <p class="transactions-block-suma" style="color: green">+$${transactionAmount}</p>
+            </div>`;
+            totalIncome += transactionAmount;
+            income.textContent = `$${totalIncome.toFixed(2)}`;
         }
         
-        const newBalance = transactionType === 'expence'
-                            ? currentBalance - expenceAmount
-                            : currentBalance + expenceAmount;
-
-        totalBalance.textContent = `$${newBalance}`;
+        const newBalance = currentBalance + (transactionType === 'expence' ? -transactionAmount : transactionAmount);
+        totalBalance.textContent = `$${newBalance.toFixed(2)}`;
     }
    
     if(transactionType === ''){
         alert('choose type of transaction!');
     }
-    
 
     nametov.value = '';
     date.value = '';
     amount.value = '';
-
-
 });
-
-
